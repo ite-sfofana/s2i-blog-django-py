@@ -11,6 +11,8 @@ oc new-project s2i-lab
 oc new-app python:latest~https://github.com/ite-sfofana/s2i-blog-django-py
 ....
 
+Note that you need to provide the S2I builder name of ``python:latest`` if you are not explicitly telling ``oc new-app`` that the source build strategy should be used. This is because the repository also contains a ``Dockerfile`` and automatic detection performed by ``oc new-app`` would give precedence to the docker build strategy.
+
 == To monitor the log output from the build as it is running, run the command:
 
 ....
