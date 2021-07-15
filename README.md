@@ -6,31 +6,23 @@ Because the SQLite database is stored in the container, new posts and any upload
 
 The appearance of the blog application can also be adjusted using a set of environment variables to make it easier to demonstrate blue/green or a/b deployments, split traffic etc.
 
-# Builging from Image
+# Builging from Image Strategy
 
-[DeployingFromImage](DeployingFromExistingImage.adoc)
+[Deploying using the image strategy](DeployingUsingExistingImage.adoc)
 
-# Building from source code
+# Building from source code strategy
 
 
 A source build and deployment can be run direct from this repository.
 
-[DeployingFromSourceToImage](DeployingUsingS2I.adoc)
+[Deploying using the source strategy](DeployingUsingS2I.adoc)
 
 
-
-# Building from Dockerfile
+# Building from Dockerfile strategy
 
 A docker build and deployment can be run direct from this repository.
 
-To build and deploy the sample application from the command line, you can run:
-
-```
-oc new-app https://github.com/ite-sfofana/s2i-blog-django-py --name blog-from-docker
-oc expose svc/blog-from-docker
-```
-
-This relies on ``oc new-app`` doing auto detection and finding that a ``Dockerfile`` exists. If you want to be specific, you can use the ``--strategy=docker`` option to be sure.
+[Deploying using the docker strategy](DeployingUsingDocker.adoc)
 
 # Adding a PostgreSQL database
 
