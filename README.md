@@ -13,7 +13,7 @@ An image is automatically built from this repository when code changes are made 
 To deploy the sample application from the command line, you can run:
 
 ```
-oc new-app openshiftkatacoda/blog-django-py --name blog-from-image
+oc new-app ite-sfofana/s2i-blog-django-py --name blog-from-image
 oc expose svc/blog-from-image
 ```
 
@@ -24,7 +24,7 @@ A source build and deployment can be run direct from this repository.
 To build and deploy the sample application from the command line, you can run:
 
 ```
-oc new-app python:latest~https://github.com/openshift-katacoda/blog-django-py --name blog-from-source-py
+oc new-app python:latest~https://github.com/ite-sfofana/s2i-blog-django-py --name blog-from-source-py
 oc expose svc/blog-from-source-py
 ```
 
@@ -33,7 +33,7 @@ Note that you need to provide the S2I builder name of ``python:latest`` if you a
 To build and deploy the sample application from the command line, but at least have automatic source language detection occur, you can run:
 
 ```
-oc new-app --strategy=source https://github.com/openshift-katacoda/blog-django-py --name blog-from-source-auto
+oc new-app --strategy=source https://github.com/ite-sfofana/s2i-blog-django-py --name blog-from-source-auto
 oc expose svc/blog-from-source-auto
 ```
 
@@ -44,11 +44,11 @@ A docker build and deployment can be run direct from this repository.
 To build and deploy the sample application from the command line, you can run:
 
 ```
-oc new-app https://github.com/openshift-katacoda/blog-django-py --name blog-from-docker
+oc new-app https://github.com/ite-sfofana/s2i-blog-django-py --name blog-from-docker
 oc expose svc/blog-from-docker
 ```
 
-This relies on ``oc new-app`` doing auto detection and finding that a ``Dockerfile`` exists. If want to be specific, you can use the ``--strategy=docker`` option to be sure.
+This relies on ``oc new-app`` doing auto detection and finding that a ``Dockerfile`` exists. If you want to be specific, you can use the ``--strategy=docker`` option to be sure.
 
 # Adding a PostgreSQL database
 
