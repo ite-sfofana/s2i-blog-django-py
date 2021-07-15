@@ -6,25 +6,18 @@ Because the SQLite database is stored in the container, new posts and any upload
 
 The appearance of the blog application can also be adjusted using a set of environment variables to make it easier to demonstrate blue/green or a/b deployments, split traffic etc.
 
+# Builging from Image
+
+[DeployingFromImage](DeployingFromExistingImage.adoc)
+
 # Building from source code
+
 
 A source build and deployment can be run direct from this repository.
 
-To build and deploy the sample application from the command line, you can run:
+[DeployingFromSourceToImage](DeployingUsingS2I.adoc)
 
-```
-oc new-app python:latest~https://github.com/ite-sfofana/s2i-blog-django-py --name blog-from-source-py
-oc expose svc/blog-from-source-py
-```
 
-Note that you need to provide the S2I builder name of ``python:latest`` if you are not explicitly telling ``oc new-app`` that the source build strategy should be used. This is because the repository also contains a ``Dockerfile`` and automatic detection performed by ``oc new-app`` would give precedence to the docker build strategy.
-
-To build and deploy the sample application from the command line, but at least have automatic source language detection occur, you can run:
-
-```
-oc new-app --strategy=source https://github.com/ite-sfofana/s2i-blog-django-py --name blog-from-source-auto
-oc expose svc/blog-from-source-auto
-```
 
 # Building from Dockerfile
 
