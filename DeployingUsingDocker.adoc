@@ -1,0 +1,10 @@
+# Deploying using the docker strategy
+
+To build and deploy the sample application from the command line, you can run:
+
+```
+oc new-app https://github.com/ite-sfofana/s2i-blog-django-py --name blog-from-docker
+oc expose svc/blog-from-docker
+```
+
+This relies on ``oc new-app`` doing auto detection and finding that a ``Dockerfile`` exists. If you want to be specific, you can use the ``--strategy=docker`` option to be sure.
