@@ -1,0 +1,38 @@
+= Deploying an app using source to image
+
+In this lab we will deploy an app directly from source code without using a Dockerfile 
+
+```
+oc login -u developer -p developer
+oc new-project s2i-lab
+```
+== Deploy the app with the builder image
+....
+oc new-app python:latest~https://github.com/ite-sfofana/s2i-blog-django-py
+....
+
+== To monitor the log output from the build as it is running, run the command:
+
+....
+oc logs bc/s2i-blog-django-py --follow
+....
+
+To see the status of the deployed applications run the command
+
+....
+oc status
+....
+
+Now if everything is ok, we can expose our service to external use
+
+....
+oc expose svc/s2i-blog-django-py
+....
+
+To see the url of the application run the following command:
+...
+oc get route/s2i-blog-django-py
+...
+
+Now we can open the url in a browser to see the app.
+
