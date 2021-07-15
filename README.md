@@ -6,17 +6,6 @@ Because the SQLite database is stored in the container, new posts and any upload
 
 The appearance of the blog application can also be adjusted using a set of environment variables to make it easier to demonstrate blue/green or a/b deployments, split traffic etc.
 
-# Deploying from an image
-
-An image is automatically built from this repository when code changes are made using the Docker Hub automated build mechanism.
-
-To deploy the sample application from the command line, you can run:
-
-```
-oc new-app ite-sfofana/s2i-blog-django-py --name blog-from-image
-oc expose svc/blog-from-image
-```
-
 # Building from source code
 
 A source build and deployment can be run direct from this repository.
