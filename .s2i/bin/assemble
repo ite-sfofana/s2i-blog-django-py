@@ -11,7 +11,7 @@ if [ -d /opt/app-root/wheelhouse ]; then
 fi
 
 # update pip
-pip install --upgrade pip
+#pip install --upgrade pip
 
 # Install 'powershift-cli[image]' package to add support for action hooks.
 
