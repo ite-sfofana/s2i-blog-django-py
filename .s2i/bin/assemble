@@ -10,6 +10,9 @@ if [ -d /opt/app-root/wheelhouse ]; then
     exec /opt/app-root/s2i/assemble
 fi
 
+# update pip
+pip install --upgrade pip
+
 # Install 'powershift-cli[image]' package to add support for action hooks.
 
 pip install powershift-cli[image]
