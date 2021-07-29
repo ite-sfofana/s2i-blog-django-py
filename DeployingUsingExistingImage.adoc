@@ -12,5 +12,6 @@ oc expose svc/blog-from-image
 
 Get the external url and go to a browser to see the application
 
-````
+```
 oc get route/blog-from-image
+```
