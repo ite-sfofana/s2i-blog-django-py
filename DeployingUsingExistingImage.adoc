@@ -1,11 +1,16 @@
 
 # Deploying from an image
 
-An image is automatically built from this repository when code changes are made using the Docker Hub automated build mechanism.
+An image is automatically built from the openshiftkatacode repository when code changes are made using the Docker Hub automated build mechanism.
 
 To deploy the sample application from the command line, you can run:
 
 ```
-oc new-app ite-sfofana/s2i-blog-django-py --name blog-from-image
+oc new-app openshiftkatacoda/blog-django-py --name blog-from-image
 oc expose svc/blog-from-image
 ```
+
+Get the external url and go to a browser to see the application
+
+````
+oc get route/blog-from-image
