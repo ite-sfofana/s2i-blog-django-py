@@ -39,3 +39,16 @@ oc get route/s2i-blog-django-py
 
 Now we can open the url in a browser to see the app.
 
+
+## Triggering the build from local code changes
+
+...
+git clone https://github.com/ite-sfofana/s2i-blog-django-py
+cd s2i-blog-django-py
+echo "BLOG_BANNER_COLOR=blue"
+...
+
+Now we trigger the build from local copy change
+...
+oc start-build s2i-blog-django-py --from-dir=. --wait
+...
